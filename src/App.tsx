@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-import {FaHeart , FaAngular, FaReact, FaJava, FaGithub, FaLinkedin, FaEnvelope, FaNodeJs } from 'react-icons/fa';
+import { FaAngular, FaReact, FaJava, FaGithub, FaLinkedin, FaEnvelope, FaNodeJs } from 'react-icons/fa';
 import { SiSpringboot, SiFirebase, SiMongodb, SiMysql, SiJavascript, SiTypescript, SiPython, SiApache } from 'react-icons/si';
 import project1 from './assets/project1.png';
 import project2 from './assets/project2.png';
 import project3 from './assets/project3.png';
 
-const typeWriterEffect = (text, delay = 60) => {
+const typeWriterEffect = (text: string, delay = 60) => {
   const [typedText, setTypedText] = useState('');
   const [index, setIndex] = useState(0);
 
@@ -26,7 +26,7 @@ const typeWriterEffect = (text, delay = 60) => {
 
 export default function App() {
   const [showMessage, setShowMessage] = useState(false);
-  const toggleMessage = () => setShowMessage(!showMessage);  
+  const toggleMessage = () => setShowMessage(!showMessage);
 
   const techs = [
     { icon: <FaReact />, label: 'ReactJS' },
@@ -53,13 +53,13 @@ export default function App() {
   const roleText = "Fullstack Developer, Data Analyst";
   const summaryText = "Former intern at Caixa Econômica, with hands-on experience in web development, database management, and agile methodologies (Scrum). Passionate about building scalable systems and optimizing data analysis for business insights.";
 
-  const typedName = typeWriterEffect(nameText + '.', 50); 
+  const typedName = typeWriterEffect(nameText + '.', 50);
   const typedRole = typeWriterEffect(roleText, 20);
   const typedSummary = summaryText
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-black text-green-400 font-mono px-6 py-12 space-y-24 overflow-hidden">
-      
+
       <motion.section
         className="text-center relative z-10 flex justify-between items-center"
         initial={{ opacity: 0, x: -30 }}
@@ -160,34 +160,34 @@ export default function App() {
       </motion.section>
 
       <motion.section
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 1 }}
-  className="text-center space-y-4"
->
-  <h2 className="text-3xl font-bold text-green-500">Special Message</h2>
-  
-  <motion.button
-    onClick={toggleMessage}
-    className="text-2xl font-semibold text-white bg-green-500 hover:bg-green-600 border-4 border-green-600 rounded-lg px-8 py-3 transition-all duration-300 transform hover:scale-105"
-    initial={{ scale: 0 }}
-    animate={{ scale: 1 }}
-    transition={{ type: 'spring', stiffness: 200 }}
-  >
-    Show Message
-  </motion.button>
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="text-center space-y-4"
+      >
+        <h2 className="text-3xl font-bold text-green-500">Special Message</h2>
 
-  {showMessage && (
-    <motion.p
-      className="text-xl font-semibold text-gray-300 mt-4"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 0.5 }}
-    >
-      I love you, Maria Luiza de Moura ❤️
-    </motion.p>
-  )}
-</motion.section>
+        <motion.button
+          onClick={toggleMessage}
+          className="text-2xl font-semibold text-white bg-green-500 hover:bg-green-600 border-4 border-green-600 rounded-lg px-8 py-3 transition-all duration-300 transform hover:scale-105"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: 'spring', stiffness: 200 }}
+        >
+          Show Message
+        </motion.button>
+
+        {showMessage && (
+          <motion.p
+            className="text-xl font-semibold text-gray-300 mt-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            I love you, Maria Luiza de Moura ❤️
+          </motion.p>
+        )}
+      </motion.section>
 
 
       <motion.section
