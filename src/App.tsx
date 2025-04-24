@@ -44,25 +44,25 @@ export default function App() {
   ];
 
   const projectDescriptions = [
-    "Lore Inspector",
-    "Lore Inspector",
-    "Lore Inspector"
+    "Sistema de análise jurídica com integração IA",
+    "Painel de controle empresarial com foco em produtividade",
+    "Gerador de relatórios em tempo real para bancos de dados complexos"
   ];
 
-  const nameText = "Reginaldo de Oliveira";
-  const roleText = "Fullstack Developer, Data Analyst";
-  const summaryText = "Former intern at Caixa Econômica, with hands-on experience in web development, database management, and agile methodologies (Scrum). Passionate about building scalable systems and optimizing data analysis for business insights.";
+  const nameText = "Reginaldo & Nunes";
+  const roleText = "Equipe Fullstack | Dados | Inovação";
+  const summaryText = "Somos uma equipe apaixonada por tecnologia, composta por desenvolvedores com experiências complementares. Unimos forças para criar soluções robustas e inovadoras em web, banco de dados, automação e análise de dados. Trabalhamos com foco em performance e escalabilidade.";
 
   const typedName = typeWriterEffect(nameText + '.', 50);
   const typedRole = typeWriterEffect(roleText, 20);
-  const typedSummary = summaryText
+  const typedSummary = summaryText;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-black text-green-400 font-mono px-6 py-12 space-y-24 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-800 text-blue-300 font-mono px-6 py-12 space-y-24 overflow-hidden">
 
       <motion.section
-  className="text-center relative z-10 flex flex-col md:flex-row justify-between items-center gap-10 md:gap-0"
-  initial={{ opacity: 0, x: -30 }}
+        className="text-center relative z-10 flex flex-col md:flex-row justify-between items-center gap-10 md:gap-0"
+        initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 2 }}
       >
@@ -73,10 +73,10 @@ export default function App() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0 }}
           >
-            <span className="text-green-300">{typedName}</span>
+            <span className="text-blue-400">{typedName}</span>
           </motion.h1>
           <motion.p
-            className="text-3xl mt-4 text-green-300"
+            className="text-3xl mt-4 text-blue-300"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -84,7 +84,7 @@ export default function App() {
             {typedRole}
           </motion.p>
           <motion.p
-            className="text-xl mt-4 text-gray-400"
+            className="text-xl mt-4 text-gray-300"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
@@ -100,7 +100,7 @@ export default function App() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            Experienced in banking systems, fullstack development, and scalable solutions. Former Caixa Econômica developer. Expertise in Scrum for efficient project delivery.
+            Nossa missão é transformar ideias em soluções tecnológicas completas, que se destacam pela eficiência, estética e inovação. Atuamos juntos em projetos com impacto real no mercado.
           </motion.p>
         </div>
       </motion.section>
@@ -112,22 +112,21 @@ export default function App() {
         viewport={{ once: true }}
         className="space-y-12 relative z-10"
       >
-        <h2 className="text-3xl font-bold text-center text-green-500">Technologies</h2>
+        <h2 className="text-3xl font-bold text-center text-blue-400">Tecnologias que dominamos</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 px-4">
           {techs.map((tech, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.1, rotate: 1 }}
               transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-              className="flex flex-col items-center justify-center bg-gray-800 rounded-xl p-4 text-center shadow-md hover:shadow-green-400 transition-all duration-300"
+              className="flex flex-col items-center justify-center bg-gray-800 rounded-xl p-4 text-center shadow-md hover:shadow-blue-300 transition-all duration-300"
             >
-              <div className="text-2xl text-green-300 mb-3">{tech.icon}</div>
+              <div className="text-2xl text-blue-300 mb-3">{tech.icon}</div>
               <span className="text-sm font-semibold text-white">{tech.label}</span>
             </motion.div>
           ))}
         </div>
       </motion.section>
-
 
       <motion.section
         initial={{ opacity: 0, x: 50 }}
@@ -136,7 +135,7 @@ export default function App() {
         viewport={{ once: true }}
         className="space-y-12 relative z-10"
       >
-        <h2 className="text-3xl font-bold text-center text-green-500">Selected Projects</h2>
+        <h2 className="text-3xl font-bold text-center text-blue-400">Projetos em Destaque</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {[project1, project2, project3].map((img, i) => (
             <motion.div
@@ -149,7 +148,7 @@ export default function App() {
             >
               <img src={img} alt={`project${i + 1}`} className="w-full h-48 object-cover" />
               <div className="p-4">
-                <h3 className="text-xl font-semibold">Project {i + 1}</h3>
+                <h3 className="text-xl font-semibold">Projeto {i + 1}</h3>
                 <p className="text-sm text-gray-400 mt-2">
                   {projectDescriptions[i]}
                 </p>
@@ -165,16 +164,16 @@ export default function App() {
         transition={{ duration: 1 }}
         className="text-center space-y-4"
       >
-        <h2 className="text-3xl font-bold text-green-500">Special Message</h2>
+        <h2 className="text-3xl font-bold text-blue-400">Mensagem Especial</h2>
 
         <motion.button
           onClick={toggleMessage}
-          className="text-2xl font-semibold text-white bg-green-500 hover:bg-green-600 border-4 border-green-600 rounded-lg px-8 py-3 transition-all duration-300 transform hover:scale-105"
+          className="text-2xl font-semibold text-white bg-blue-500 hover:bg-blue-600 border-4 border-blue-600 rounded-lg px-8 py-3 transition-all duration-300 transform hover:scale-105"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: 'spring', stiffness: 200 }}
         >
-          Show Message
+          Mostrar Mensagem
         </motion.button>
 
         {showMessage && (
@@ -184,11 +183,10 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            I love you, Maria Luiza Araujo de Moura ❤️
+            “Juntos vamos mais longe. Tecnologia é a ponte entre ideias e realidade.”
           </motion.p>
         )}
       </motion.section>
-
 
       <motion.section
         initial={{ opacity: 0, y: 30 }}
@@ -197,7 +195,7 @@ export default function App() {
         viewport={{ once: true }}
         className="text-center space-y-4 relative z-10"
       >
-        <h2 className="text-2xl font-bold text-green-500">Contact</h2>
+        <h2 className="text-2xl font-bold text-blue-400">Contato</h2>
         <div className="flex justify-center gap-6 text-3xl">
           <a href="https://github.com/Hitjunior001" target="_blank" rel="noreferrer" className="hover:text-white">
             <FaGithub />
@@ -209,7 +207,7 @@ export default function App() {
             <FaEnvelope />
           </a>
         </div>
-        <p className="text-sm text-gray-500">© 2025 Reginaldo de Oliveira</p>
+        <p className="text-sm text-gray-500">© 2025 Reginaldo & Nunes</p>
       </motion.section>
     </div>
   );
