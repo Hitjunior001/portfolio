@@ -6,9 +6,6 @@ import {
 import {
   SiSpringboot, SiFirebase, SiMongodb, SiMysql, SiJavascript, SiTypescript, SiPython, SiApache
 } from 'react-icons/si';
-import project1 from './assets/project1.png';
-import project2 from './assets/project2.png';
-import project3 from './assets/project3.png';
 import { Monitor, Link2, Settings } from "lucide-react";
 import "./index.css";
 
@@ -61,7 +58,6 @@ export default function App() {
         "Tailwind CSS",
         "Firebase",
       ],
-      imgSrc: "project1.jpg",
       githubLink: "https://github.com/Hitjunior001/PlayerFinder-Ceub-",
 
     },
@@ -70,7 +66,6 @@ export default function App() {
       description:
         "A web-based system for managing cooperative members, designed to help organize and track member contributions, profiles, and interactions. The system uses advanced filtering to search for members based on specific skills, qualifications, and contributions. It supports roles like members, administrators, and coordinators, providing a user-friendly interface for seamless management.",
       technologies: ["Spring Boot", "MySQL", "Thymeleaf", "Java", "JavaScript", "HTML", "CSS"],
-      imgSrc: "project2.jpg", 
       githubLink: "https://github.com/Hitjunior001/Sistema_Cooperados/", 
     },
     {
@@ -78,7 +73,6 @@ export default function App() {
       description:
         "A back-end application developed in Node.js designed for managing cooperative members in a database. This project aims to provide an efficient and scalable solution to organize and maintain information about members of a financial institution. It offers real-time data management and filtering capabilities, providing a user-friendly interface for administrators and coordinators to track member contributions, profiles, and activities.",
       technologies: ["Node.js", "ReactJS", "EJS", "MySQL", "JavaScript", "HTML", "CSS"],
-      imgSrc: "project3.jpg", 
       githubLink: "https://github.com/Hitjunior001/cooperX", 
     },
   ];
