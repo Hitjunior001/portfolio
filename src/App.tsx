@@ -61,8 +61,8 @@ export default function App() {
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-black text-green-400 font-mono px-6 py-12 space-y-24 overflow-hidden">
 
       <motion.section
-        className="text-center relative z-10 flex justify-between items-center"
-        initial={{ opacity: 0, x: -30 }}
+  className="text-center relative z-10 flex flex-col md:flex-row justify-between items-center gap-10 md:gap-0"
+  initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 2 }}
       >
@@ -184,7 +184,7 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            I love you, Maria Luiza de Moura ❤️
+            I love you, Maria Luiza Araujo de Moura ❤️
           </motion.p>
         )}
       </motion.section>
