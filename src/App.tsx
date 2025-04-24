@@ -13,7 +13,7 @@ import { Monitor, Link2, Settings } from "lucide-react";
 import "./index.css";
 
 
-const typeWriterEffect = (text, delay = 60) => {
+const typeWriterEffect = (text: string, delay = 60) => {
   const [typedText, setTypedText] = useState('');
   const [index, setIndex] = useState(0);
 
