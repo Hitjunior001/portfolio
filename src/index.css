@@ -1,1 +1,61 @@
 @import "tailwindcss";
+
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      opacity: 1;
+    }
+    20%, 24%, 55% {
+      opacity: 0.1;
+    }
+  }
+  
+  @keyframes fade {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.3; }
+  }
+  
+  @keyframes glitchText {
+    0% {
+      text-shadow: 1px 0 red, -1px 0 blue;
+    }
+    20% {
+      text-shadow: -2px -2px red, 2px 2px blue;
+    }
+    40% {
+      text-shadow: 2px 2px red, -2px -2px blue;
+    }
+    60% {
+      text-shadow: -1px 1px red, 1px -1px blue;
+    }
+    80% {
+      text-shadow: 1px -1px red, -1px 1px blue;
+    }
+    100% {
+      text-shadow: 1px 0 red, -1px 0 blue;
+    }
+  }
+  
+  .glitch-text {
+    animation: glitchText 1.5s infinite;
+  }
+  
+  .animate-flicker {
+    animation: flicker 3s infinite;
+  }
+  
+  .animate-fade {
+    animation: fade 5s infinite;
+  }
+  
+  .glitch-layer {
+    background: repeating-linear-gradient(
+      0deg,
+      #000,
+      #000 1px,
+      #0f0 2px,
+      #000 3px
+    );
+    animation: flicker 4s infinite alternate;
+    mix-blend-mode: lighten;
+    opacity: 0.1;
+  }
