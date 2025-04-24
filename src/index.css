@@ -13,7 +13,7 @@
     0%, 100% { opacity: 0.8; }
     50% { opacity: 0.3; }
   }
-  
+/*   
   @keyframes glitchText {
     0% {
       text-shadow: 1px 0 red, -1px 0 blue;
@@ -33,7 +33,7 @@
     100% {
       text-shadow: 1px 0 red, -1px 0 blue;
     }
-  }
+  } */
   
   .glitch-text {
     animation: glitchText 1.5s infinite;
@@ -47,15 +47,3 @@
     animation: fade 5s infinite;
   }
   
-  .glitch-layer {
-    background: repeating-linear-gradient(
-      0deg,
-      #000,
-      #000 1px,
-      #0f0 2px,
-      #000 3px
-    );
-    animation: flicker 4s infinite alternate;
-    mix-blend-mode: lighten;
-    opacity: 0.1;
-  }

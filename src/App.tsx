@@ -50,9 +50,37 @@ export default function App() {
   ];
 
   const projectDescriptions = [
-    "AI-integrated legal analysis system",
-    "Enterprise dashboard focused on productivity",
-    "Real-time reporting engine for complex databases"
+    {
+      title: "PlayerFinder",
+      description:
+        "PlayerFinder is a project developed with Java for the backend and ReactJS for the frontend. It utilizes modern technologies such as Spring Boot, Tailwind CSS, and Firebase for real-time database management and user authentication. The application connects players based on their skill levels and game preferences, helping them find teammates or opponents for various games.",
+      technologies: [
+        "Java",
+        "Spring Boot",
+        "ReactJS",
+        "Tailwind CSS",
+        "Firebase",
+      ],
+      imgSrc: "project1.jpg",
+      githubLink: "https://github.com/Hitjunior001/PlayerFinder-Ceub-",
+
+    },
+    {
+      title: "Cooperative Member Management System",
+      description:
+        "A web-based system for managing cooperative members, designed to help organize and track member contributions, profiles, and interactions. The system uses advanced filtering to search for members based on specific skills, qualifications, and contributions. It supports roles like members, administrators, and coordinators, providing a user-friendly interface for seamless management.",
+      technologies: ["Spring Boot", "MySQL", "Thymeleaf", "Java", "JavaScript", "HTML", "CSS"],
+      imgSrc: "project2.jpg", 
+      githubLink: "https://github.com/Hitjunior001/Sistema_Cooperados/", 
+    },
+    {
+      title: "Cooperative Member Management System",
+      description:
+        "A back-end application developed in Node.js designed for managing cooperative members in a database. This project aims to provide an efficient and scalable solution to organize and maintain information about members of a financial institution. It offers real-time data management and filtering capabilities, providing a user-friendly interface for administrators and coordinators to track member contributions, profiles, and activities.",
+      technologies: ["Node.js", "ReactJS", "EJS", "MySQL", "JavaScript", "HTML", "CSS"],
+      imgSrc: "project3.jpg", 
+      githubLink: "https://github.com/Hitjunior001/cooperX", 
+    },
   ];
 
   const nameText = "Reginaldo & Gabriel";
@@ -79,7 +107,7 @@ export default function App() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0 }}
           >
-            <span className="text-blue-400 animate-pulse">{typedName}</span>
+            <span className="text-blue-400 animate-flicker">{typedName}</span>
           </motion.h1>
           <motion.p
             className="text-3xl mt-4 text-blue-300"
@@ -119,8 +147,8 @@ export default function App() {
         viewport={{ once: true }}
         className=" rounded-2xl p-10 shadow-2xl text-white space-y-8"
       >
-        <h2 className="text-4xl font-bold text-center text-blue-400 drop-shadow-lg glitch-text">
-          We Turn Ideas Into Digital Experiences
+        <h2 className="text-4xl font-bold text-center text-blue-400 drop-shadow-lg glitch-text animate-flicker">
+          [ We Turn Ideas Into Digital Experiences ]
         </h2>
 
         <p className="text-xl text-center text-gray-200 max-w-4xl mx-auto">
@@ -196,7 +224,7 @@ export default function App() {
         viewport={{ once: true }}
         className="space-y-12 relative z-10 rounded-2xl p-10 shadow-2xl"
       >
-        <h2 className="text-4xl font-bold text-center text-blue-400 drop-shadow-lg glitch-text">              Technologies We Master</h2>
+        <h2 className="text-4xl font-bold text-center text-blue-400 drop-shadow-lg glitch-text animate-flicker">[ Technologies We Master ]</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 px-4">
           {techs.map((tech, index) => (
             <motion.div
@@ -213,35 +241,63 @@ export default function App() {
       </motion.section>
 
       <motion.section
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="space-y-12 relative z-10 rounded-2xl p-10 shadow-2xl"
-      >
-        <h2 className="text-4xl font-bold text-center text-blue-400 drop-shadow-lg glitch-text">
-          Featured Projects</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {[project1, project2, project3].map((img, i) => (
-            <motion.div
-              key={i}
-              className="bg-gray-900 rounded-lg overflow-hidden shadow-lg"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.2 }}
-              viewport={{ once: true }}
-            >
-              <img src={img} alt={`project${i + 1}`} className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold">Project {i + 1}</h3>
-                <p className="text-sm text-gray-400 mt-2">
-                  {projectDescriptions[i]}
-                </p>
+      initial={{ opacity: 0, x: 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="space-y-12 relative z-10 rounded-2xl p-10 shadow-2xl pointer"
+    >
+      <h2 className="text-4xl font-bold text-center text-blue-400 drop-shadow-lg glitch-text animate-flicker">
+        [ Featured Projects ]
+      </h2>
+      <div className="grid md:grid-cols-3 gap-8">
+        {projectDescriptions.map((project, i) => (
+          <motion.div
+            key={i}
+            className="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: i * 0.2 }}
+            viewport={{ once: true }}
+          >
+            {/* <img
+              src={project.imgSrc}
+              alt={project.title}
+              className="w-full h-48 object-cover"
+            /> */}
+            <div className="p-4">
+              <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+              <p className="text-sm text-gray-400 mt-2">{project.description}</p>
+              <div className="mt-4">
+                <h4 className="text-md text-blue-400">Technologies:</h4>
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {project.technologies.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="text-xs text-gray-300 px-3 py-1 bg-gray-800 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                {/* Botão para o GitHub */}
+                <div className="mt-4">
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center py-2 px-4 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
+                  >
+                    <FaGithub className="mr-2" />
+                    View on GitHub
+                  </a>
+                </div>
               </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.section>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </motion.section>
 
       <motion.section
         initial={{ opacity: 0 }}
@@ -249,7 +305,7 @@ export default function App() {
         transition={{ duration: 1 }}
         className="text-center space-y-4"
       >
-        <h2 className="text-3xl font-bold text-blue-400 glitch-text">Special Message</h2>
+        <h2 className="text-3xl font-bold text-blue-400 glitch-text animate-flicker">[ Special Message ] </h2>
 
         <motion.button
           onClick={toggleMessage}
@@ -278,7 +334,7 @@ export default function App() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="relative z-10 py-24 text-center text-blue-400 overflow-hidden rounded-2xl p-10 shadow-2xl"
+        className="relative z-10 py-24 text-center text-blue-400 overflow-hidden"
         id="contact"
       >
         <h2 className="text-3xl font-bold tracking-widest mb-16 glitch-text">[ CONTACT US ]</h2>
